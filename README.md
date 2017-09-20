@@ -29,15 +29,15 @@ and u can add api to `controllers`, `rest`, `static` folder
 
 ## knowledge
 
-    1. koa2
-    2. koa2-cors
-    3. koa-bodyparser
-    4. koa-router
-    5. faker.js
+* koa2
+* koa2-cors
+* koa-bodyparser
+* koa-router
+* [faker.js](https://github.com/marak/faker.js/)
 
-    6. http prePost check
-    7. babel
-    8. nodejs
+* [http CORS prePost check](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS#Preflighted_requests)
+* babel
+* nodejs
 
 ----
 
