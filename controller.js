@@ -13,6 +13,10 @@ function addMapping(router, mapping) {
             var path = url.substring(5);
             router.post(path, mapping[url]);
             console.log(`register URL mapping: POST ${path}`);
+        } else if (url.startsWith('PATCH ')) {
+            var path = url.substring(6);
+            router.patch(path, mapping[url]);
+            console.log(`register URL mapping: PATCH ${path}`);
         } else if (url.startsWith('PUT ')) {
             var path = url.substring(4);
             router.put(path, mapping[url]);
