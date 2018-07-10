@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "yarn run mock",
-    "mock": "supervisor -- app.js --harmony"
+    "mock": "supervisor --harmony -- app.js "
   },
   "dependencies": {
     "babel-cli": "^6.26.0",

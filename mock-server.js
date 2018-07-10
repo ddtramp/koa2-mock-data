@@ -1,3 +1,4 @@
+#! /usr/bin/env node --harmony
 const program = require('commander')
 program.version('1.0.1')
   .option('-p, --port [port]', 'set local server port, default port is 3000', 3000)
