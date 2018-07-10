@@ -1,12 +1,19 @@
+const program = require('commander')
+program.version('1.0.1')
+  .option('-p, --port [port]', 'set local server port, default port is 3000', 3000)
+  .parse(process.argv)
+
+const colors = require('colors')  
+
 const path = require('path')
 const Koa = require('koa')
 const bodyParser = require('koa-bodyparser')
-var cors = require('koa2-cors')
-
 const controller = require('./controller') // register routers to koa-router
 const rest = require('./rest')
-
+const ips = require('./getIPAddress')
 const app = new Koa()
+
+let cors = require('koa2-cors')
 
 app.use(cors({
     origin: function (ctx) {
@@ -37,5 +44,8 @@ app.use(rest.restify())
 
 app.use(controller())
 
-app.listen(3000)
-console.log('Mock server started at port 3000...')
+app.listen(program.port)
+console.log(colors.yellow.bold('Server Running At:'))
+for (let ip of ips) {
+  console.log(colors.green.underline(`http://${ip}:${program.port}`))
+}
